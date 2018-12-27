@@ -22,6 +22,25 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Start Timer" id="eQ2-Zz-89b" userLabel="Start Timer">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="startTimer:" target="Voe-Tx-rLC" id="hic-c7-OfA"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Stop Timer" hidden="YES" enabled="NO" id="5BX-dK-XkB" userLabel="Stop Timer">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="stopTimer:" target="Voe-Tx-rLC" id="unT-yy-AoT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Reset Timer" hidden="YES" enabled="NO" id="tfp-Zm-oF5" userLabel="Reset Timer">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="resetTimer:" target="Voe-Tx-rLC" id="kIZ-3J-ZmK"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="oVk-VB-r5D"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
                                                 <segue destination="B8D-0N-5wS" kind="show" id="zZG-hA-K6Y"/>
@@ -77,11 +96,18 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PomoDomo" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PomoDomo" customModuleProvider="target">
+                    <connections>
+                        <outlet property="menu" destination="uQy-DD-JDr" id="FuX-GU-z1E"/>
+                        <outlet property="resetTimerMenuItem" destination="tfp-Zm-oF5" id="x1K-1C-vEY"/>
+                        <outlet property="startTimerMenuItem" destination="eQ2-Zz-89b" id="FX5-H5-qaL"/>
+                        <outlet property="stopTimerMenuItem" destination="5BX-dK-XkB" id="6Vu-gA-iEx"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="-374" y="-130"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -90,7 +116,7 @@
                     <window key="window" title="PomoDomo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="1200" y="827" width="480" height="200"/>
+                        <rect key="contentRect" x="1200" y="827" width="480" height="155"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -102,68 +128,63 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="209.5"/>
+            <point key="canvasLocation" x="-275" y="322"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="PomoDomo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="210"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2Lg-Da-z0U">
-                                <rect key="frame" x="18" y="117" width="444" height="24"/>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="40" doubleValue="20" tickMarkPosition="above" numberOfTickMarks="5" sliderType="linear" id="H2c-BD-g78"/>
+                                <rect key="frame" x="18" y="36" width="444" height="24"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="10" maxValue="30" doubleValue="20" tickMarkPosition="above" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="H2c-BD-g78"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" target="XfG-lQ-9wD" id="JPt-gX-MiY"/>
+                                </connections>
                             </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TE8-Rs-gTU">
-                                <rect key="frame" x="18" y="149" width="444" height="27"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Break Time" placeholderString="20" id="9L1-9J-vg7">
-                                    <font key="font" metaFont="system" size="22"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j58-vR-LHa">
-                                <rect key="frame" x="18" y="91" width="444" height="17"/>
+                                <rect key="frame" x="18" y="13" width="444" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="How long between notifications?" id="eAs-Ip-ugX">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7nE-6x-Uww">
-                                <rect key="frame" x="18" y="18" width="267" height="18"/>
-                                <buttonCell key="cell" type="check" title="Hide from dock (only display in task bar)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="9BL-JT-UBN">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CmW-D0-9dt">
+                                <rect key="frame" x="18" y="68" width="444" height="24"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="LNk-wO-7Pw">
+                                    <font key="font" metaFont="system" size="20"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="j58-vR-LHa" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="5yJ-d8-mHy"/>
-                            <constraint firstItem="2Lg-Da-z0U" firstAttribute="top" secondItem="TE8-Rs-gTU" secondAttribute="bottom" constant="8" id="BOD-Fw-wB0"/>
-                            <constraint firstItem="j58-vR-LHa" firstAttribute="top" secondItem="2Lg-Da-z0U" secondAttribute="bottom" constant="11" id="DST-mc-tVo"/>
-                            <constraint firstItem="j58-vR-LHa" firstAttribute="leading" secondItem="7nE-6x-Uww" secondAttribute="leading" id="IQC-Lg-tA8"/>
-                            <constraint firstItem="2Lg-Da-z0U" firstAttribute="top" secondItem="TE8-Rs-gTU" secondAttribute="bottom" constant="8" id="QxX-4z-ltl"/>
-                            <constraint firstItem="7nE-6x-Uww" firstAttribute="top" secondItem="j58-vR-LHa" secondAttribute="bottom" constant="57" id="UJE-pp-hfA"/>
-                            <constraint firstItem="j58-vR-LHa" firstAttribute="leading" secondItem="2Lg-Da-z0U" secondAttribute="leading" id="W3D-Qa-Nah"/>
-                            <constraint firstAttribute="trailing" secondItem="TE8-Rs-gTU" secondAttribute="trailing" constant="20" id="a1I-Nz-nfT"/>
-                            <constraint firstItem="j58-vR-LHa" firstAttribute="top" secondItem="2Lg-Da-z0U" secondAttribute="bottom" constant="11" id="aNS-O2-CCb"/>
-                            <constraint firstItem="TE8-Rs-gTU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="34" id="aPg-SX-GNa"/>
-                            <constraint firstAttribute="trailing" secondItem="2Lg-Da-z0U" secondAttribute="trailing" constant="20" id="fjn-pH-fG5"/>
-                            <constraint firstItem="j58-vR-LHa" firstAttribute="trailing" secondItem="2Lg-Da-z0U" secondAttribute="trailing" id="g3W-9I-bOJ"/>
-                            <constraint firstItem="TE8-Rs-gTU" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="hN5-VE-bdA"/>
-                            <constraint firstAttribute="bottom" secondItem="2Lg-Da-z0U" secondAttribute="bottom" constant="119" id="lfb-PV-FHq"/>
-                            <constraint firstItem="7nE-6x-Uww" firstAttribute="top" secondItem="j58-vR-LHa" secondAttribute="bottom" constant="57" id="lua-AS-TOj"/>
-                            <constraint firstItem="2Lg-Da-z0U" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="nEs-ue-WQ0"/>
-                            <constraint firstAttribute="trailing" secondItem="j58-vR-LHa" secondAttribute="trailing" constant="20" id="tpu-hN-3cB"/>
+                            <constraint firstAttribute="trailing" secondItem="j58-vR-LHa" secondAttribute="trailing" constant="20" id="BFt-g4-Ng5"/>
+                            <constraint firstAttribute="trailing" secondItem="2Lg-Da-z0U" secondAttribute="trailing" constant="20" id="JE0-J7-G2f"/>
+                            <constraint firstItem="2Lg-Da-z0U" firstAttribute="top" secondItem="CmW-D0-9dt" secondAttribute="bottom" constant="8" id="Jmx-PY-MmI"/>
+                            <constraint firstItem="CmW-D0-9dt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="OX9-1N-M4l"/>
+                            <constraint firstItem="j58-vR-LHa" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="UUT-no-shf"/>
+                            <constraint firstItem="2Lg-Da-z0U" firstAttribute="top" secondItem="CmW-D0-9dt" secondAttribute="bottom" constant="8" id="ZQu-zd-lhF"/>
+                            <constraint firstItem="2Lg-Da-z0U" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="apV-pc-4pK"/>
+                            <constraint firstAttribute="trailing" secondItem="CmW-D0-9dt" secondAttribute="trailing" constant="20" id="bxe-qu-IzE"/>
+                            <constraint firstItem="j58-vR-LHa" firstAttribute="top" secondItem="2Lg-Da-z0U" secondAttribute="bottom" constant="8" id="hsY-TU-PLn"/>
+                            <constraint firstAttribute="bottom" secondItem="j58-vR-LHa" secondAttribute="bottom" constant="13" id="j3Z-Ed-K1J"/>
+                            <constraint firstItem="CmW-D0-9dt" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="s3N-RH-W86"/>
+                            <constraint firstItem="j58-vR-LHa" firstAttribute="top" secondItem="2Lg-Da-z0U" secondAttribute="bottom" constant="8" id="zA7-EK-0yu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="slider" destination="H2c-BD-g78" id="xVc-4b-I9J"/>
+                        <outlet property="sliderLabel" destination="CmW-D0-9dt" id="L0L-n9-V5D"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="620"/>
+            <point key="canvasLocation" x="-275" y="593"/>
         </scene>
     </scenes>
 </document>

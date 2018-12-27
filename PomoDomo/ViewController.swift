@@ -10,10 +10,16 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var slider: NSSliderCell!
+    @IBOutlet weak var sliderLabel: NSTextField!
+    
+    let appDelegate = NSApplication.shared.delegate as! AppDelegate
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        slider.intValue = appDelegate.interval
+        sliderLabel.stringValue = slider.stringValue
     }
 
     override var representedObject: Any? {
@@ -23,5 +29,9 @@ class ViewController: NSViewController {
     }
 
 
+    @IBAction func sliderValueChanged(_ sender: Any) {
+        sliderLabel.stringValue = slider.stringValue
+        appDelegate.interval = slider.intValue
+    }
 }
 
