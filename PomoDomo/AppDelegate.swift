@@ -12,8 +12,9 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var menu: NSMenu!
+    public var interval: Int32 = 20
+    
     var statusItem: NSStatusItem?
-    var interval: Int = 20
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         self.statusItem = NSStatusBar.system.statusItem(withLength: -1)
