@@ -11,10 +11,15 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
+    @IBOutlet weak var menu: NSMenu!
+    var statusItem: NSStatusItem?
+    var interval: Int = 20
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        self.statusItem = NSStatusBar.system.statusItem(withLength: -1)
+        self.statusItem?.button?.title = "PomoDomo!"
+        self.statusItem?.button?.image = NSImage(named:NSImage.Name("PomoDomo_ic64.png"))
+        self.statusItem!.menu = self.menu
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
