@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8753C86121D54F7A00A5312C /* PomoDomo_ic1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 8753C86021D54F7A00A5312C /* PomoDomo_ic1024.png */; };
+		8753C86521D54FC500A5312C /* PomoDomo_ic128.png in Resources */ = {isa = PBXBuildFile; fileRef = 8753C86221D54FC500A5312C /* PomoDomo_ic128.png */; };
+		8753C86621D54FC500A5312C /* PomoDomo_ic256.png in Resources */ = {isa = PBXBuildFile; fileRef = 8753C86321D54FC500A5312C /* PomoDomo_ic256.png */; };
+		8753C86721D54FC500A5312C /* PomoDomo_ic512.png in Resources */ = {isa = PBXBuildFile; fileRef = 8753C86421D54FC500A5312C /* PomoDomo_ic512.png */; };
+		8753C86B21D5502E00A5312C /* PomoDomo_ic32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8753C86821D5502E00A5312C /* PomoDomo_ic32.png */; };
+		8753C86C21D5502E00A5312C /* PomoDomo_ic16.png in Resources */ = {isa = PBXBuildFile; fileRef = 8753C86921D5502E00A5312C /* PomoDomo_ic16.png */; };
+		8753C86D21D5502E00A5312C /* PomoDomo_ic64.png in Resources */ = {isa = PBXBuildFile; fileRef = 8753C86A21D5502E00A5312C /* PomoDomo_ic64.png */; };
 		878046AE21D53AF500FF6213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878046AD21D53AF500FF6213 /* AppDelegate.swift */; };
 		878046B021D53AF500FF6213 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878046AF21D53AF500FF6213 /* ViewController.swift */; };
 		878046B221D53AF600FF6213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 878046B121D53AF600FF6213 /* Assets.xcassets */; };
@@ -33,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8753C86021D54F7A00A5312C /* PomoDomo_ic1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PomoDomo_ic1024.png; sourceTree = "<group>"; };
+		8753C86221D54FC500A5312C /* PomoDomo_ic128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PomoDomo_ic128.png; sourceTree = "<group>"; };
+		8753C86321D54FC500A5312C /* PomoDomo_ic256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PomoDomo_ic256.png; sourceTree = "<group>"; };
+		8753C86421D54FC500A5312C /* PomoDomo_ic512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PomoDomo_ic512.png; sourceTree = "<group>"; };
+		8753C86821D5502E00A5312C /* PomoDomo_ic32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PomoDomo_ic32.png; sourceTree = "<group>"; };
+		8753C86921D5502E00A5312C /* PomoDomo_ic16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PomoDomo_ic16.png; sourceTree = "<group>"; };
+		8753C86A21D5502E00A5312C /* PomoDomo_ic64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PomoDomo_ic64.png; sourceTree = "<group>"; };
 		878046AA21D53AF500FF6213 /* PomoDomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomoDomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878046AD21D53AF500FF6213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		878046AF21D53AF500FF6213 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,9 +87,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8753C85D21D54F4C00A5312C /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				8753C86921D5502E00A5312C /* PomoDomo_ic16.png */,
+				8753C86821D5502E00A5312C /* PomoDomo_ic32.png */,
+				8753C86A21D5502E00A5312C /* PomoDomo_ic64.png */,
+				8753C86221D54FC500A5312C /* PomoDomo_ic128.png */,
+				8753C86321D54FC500A5312C /* PomoDomo_ic256.png */,
+				8753C86421D54FC500A5312C /* PomoDomo_ic512.png */,
+				8753C86021D54F7A00A5312C /* PomoDomo_ic1024.png */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
 		878046A121D53AF500FF6213 = {
 			isa = PBXGroup;
 			children = (
+				8753C85D21D54F4C00A5312C /* assets */,
 				878046AC21D53AF500FF6213 /* PomoDomo */,
 				878046BF21D53AF600FF6213 /* PomoDomoTests */,
 				878046CA21D53AF600FF6213 /* PomoDomoUITests */,
@@ -228,8 +257,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8753C86C21D5502E00A5312C /* PomoDomo_ic16.png in Resources */,
+				8753C86621D54FC500A5312C /* PomoDomo_ic256.png in Resources */,
 				878046B221D53AF600FF6213 /* Assets.xcassets in Resources */,
+				8753C86D21D5502E00A5312C /* PomoDomo_ic64.png in Resources */,
+				8753C86B21D5502E00A5312C /* PomoDomo_ic32.png in Resources */,
+				8753C86521D54FC500A5312C /* PomoDomo_ic128.png in Resources */,
 				878046B521D53AF600FF6213 /* Main.storyboard in Resources */,
+				8753C86721D54FC500A5312C /* PomoDomo_ic512.png in Resources */,
+				8753C86121D54F7A00A5312C /* PomoDomo_ic1024.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
