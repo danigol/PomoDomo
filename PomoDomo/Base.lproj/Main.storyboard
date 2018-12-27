@@ -114,7 +114,7 @@
                         <subviews>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2Lg-Da-z0U">
                                 <rect key="frame" x="18" y="117" width="444" height="24"/>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="40" doubleValue="20" tickMarkPosition="above" numberOfTickMarks="5" sliderType="linear" id="H2c-BD-g78"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="15" maxValue="25" doubleValue="20" tickMarkPosition="above" numberOfTickMarks="3" allowsTickMarkValuesOnly="YES" sliderType="linear" id="H2c-BD-g78"/>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TE8-Rs-gTU">
                                 <rect key="frame" x="18" y="149" width="444" height="27"/>
